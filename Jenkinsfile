@@ -14,6 +14,7 @@ pipeline {
         }
         stage ('Deploy') {
             steps {
+                input 'Do you want to deploy to production?'
                 sh "docker run -d -p 30${env.BUILD_NUMBER}:80 rahmaahmed2002/myapp:${env.BUILD_TAG}"
             }
         }
