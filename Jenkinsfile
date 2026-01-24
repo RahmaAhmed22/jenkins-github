@@ -14,7 +14,7 @@ pipeline {
         }
         stage ('Deploy') {
             steps {
-                sh "docker run -d -p 3000:80 rahmaahmed2002/myapp:${env.BUILD_TAG}"
+                sh "docker run -d -p 300${env.BUILD_TAG}:80 rahmaahmed2002/myapp:${env.BUILD_TAG}"
             }
         }
     }
