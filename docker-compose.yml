@@ -1,0 +1,15 @@
+services:
+  mysql:
+    image: mariadb:latest
+    container_name: db_mod
+    env_file: "database.env"
+    volumes:
+      - maria-data:/var/lib/backup/data
+
+  php:
+    build: .
+    ports:
+      - "8080:80"
+
+volumes:
+   maria-data:
