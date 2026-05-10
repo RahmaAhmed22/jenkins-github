@@ -7,7 +7,6 @@ pipeline {
             steps {
                 //input 'Do you want to deploy to production?'
                 sh "docker compose up -d"
-                sh "docker compose push"
             }
         }
     }
